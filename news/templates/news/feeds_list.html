@@ -12,7 +12,7 @@ Your feeds
 {%block main_content%}
     {%for feed in feeds%}
     <div class="well well-sm">
-        <a href="{{feed.url}}">{{feed.title}}</a>
+        <a href="{%url 'articles_list_of_a_feed' feed.title%}">{{feed.title}}</a>
     </div>
     {%endfor%}
 {%endblock%}

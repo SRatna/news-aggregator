@@ -19,7 +19,7 @@ def new_feed(request):
             feed = form.save(commit=False)
             feed.title='Title'
             feed.save()
-            return redirect('news.views.feeds_list')
+            return redirect('feeds_list')
     else:
         form = FeedForm()
     return render(request,'news/new_feed.html',{'form':form})

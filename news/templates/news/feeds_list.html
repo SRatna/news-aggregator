@@ -10,4 +10,9 @@ Your feeds
 {%endblock%}
 {%block main_content%}
 <a href="{%url 'new_feed' %}" class="btn btn-primary">New Feed</a>
+<ul>
+    {%for feed in feeds%}
+    <li>{{feed.title}}</li>
+    {%endfor%}
+</ul>
 {%endblock%}

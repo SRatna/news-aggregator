@@ -8,3 +8,10 @@ Your news
         <p>Well its a django project that serves news from your favorite feeds.</p>
       </div>
 {%endblock%}
+{%block main_content%}
+<ul>
+    {%for article in articles%}
+    <li>{{article.title}}</li>
+    {%endfor%}
+</ul>
+{%endblock%}

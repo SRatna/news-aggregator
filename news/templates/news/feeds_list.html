@@ -6,13 +6,13 @@ Your feeds
     <div class="container">
         <h1>Django News Feeds</h1>
         <p>Well These are all the feeds available.</p>
+        <a href="{%url 'new_feed' %}" class="btn btn-primary">Add New Feed</a>
       </div>
 {%endblock%}
 {%block main_content%}
-<a href="{%url 'new_feed' %}" class="btn btn-primary">New Feed</a>
-<ul>
     {%for feed in feeds%}
-    <li>{{feed.title}}</li>
+    <div class="well well-sm">
+        <a href="{{feed.url}}">{{feed.title}}</a>
+    </div>
     {%endfor%}
-</ul>
 {%endblock%}

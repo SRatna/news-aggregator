@@ -8,7 +8,8 @@ import feedparser
 
 def articles_list(request):
     articles = Article.objects.all()
-    return render(request,'news/articles_list.html',{'articles':articles})
+    rows = [articles[x:x+2] for x in range(0,len(articles),2)]
+    return render(request,'news/articles_list.html',{'rows':rows})
 
 def feeds_list(request):
     feeds = Feed.objects.all()

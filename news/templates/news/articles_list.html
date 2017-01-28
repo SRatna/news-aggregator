@@ -9,9 +9,19 @@ Your news
       </div>
 {%endblock%}
 {%block main_content%}
-<ul>
-    {%for article in articles%}
-    <li>{{article.title}}</li>
+<div class="row">
+    {%for row in rows%}
+        {%for entry in row%}
+        <div class="panel panel-info" style="padding-left: 0px; padding-right: 0px;height: 100%;">
+            <div class="panel-heading">
+                <h4><a href="{{entry.url}}">{{entry.title}}</a></h4>
+            </div>
+            <div class="panel-body">
+                <p>{{entry.description}}</p>
+                <small>{{entry.published_date}}</small>
+            </div>
+        </div>
+        {%endfor%}
     {%endfor%}
-</ul>
+</div>
 {%endblock%}
